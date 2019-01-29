@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Recpie } from 'src/app/shared/models/recpie.model';
 
 @Component({
   selector: 'app-recpie-detail',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecpieDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() recipe:Recpie;
+
+  constructor() {     console.log(this.recipe);
+  }
 
   ngOnInit() {
   }

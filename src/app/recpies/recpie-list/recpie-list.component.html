@@ -5,16 +5,8 @@
 </div>
 <div class="row mt-10">
     <div class="col-xs-12 mb-10">
-        <a href="" class="list-group-item clearfix" *ngFor= "let recpie of recpies" >
-            <div class="pull-right">
-                <h4 class="list-group-item-heading">{{recpie.name}}</h4>
-                <p class="list-group-item-text"> {{recpie.description}}</p>
-            </div>
-            <span class="pull-left">
-                <img src="{{recpie.photoPath}}" alt="" class="img-responsive" style="max-height : 50px;">
-            </span>
-        </a>
-        <app-recpie-item></app-recpie-item>
+
+        <app-recpie-item  *ngFor= "let recipeEL of recpies" [recipe]="recipeEL" (itemToList)= "onClickList($event)"> </app-recpie-item>
 
     </div>
 </div>

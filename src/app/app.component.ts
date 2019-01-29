@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'roxo';
+
+  recipeShow : boolean = true;
+
+  onNavigation(event){
+    if (event == 'recipe'){
+      this.recipeShow = true;
+    }else{
+      this.recipeShow = false;
+    }
+  }
+
+
 }

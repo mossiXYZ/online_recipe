@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recpie } from '../../shared/models/recpie.model';
 
 @Component({
@@ -7,6 +7,8 @@ import { Recpie } from '../../shared/models/recpie.model';
   styleUrls: ['./recpie-list.component.css']
 })
 export class RecpieListComponent implements OnInit {
+
+  @Output() listToRecipes :EventEmitter<Recpie> = new EventEmitter<Recpie>();
 
   recpies : Recpie[] =[
     new Recpie('دستور پخت ماکارونی',
@@ -22,6 +24,11 @@ export class RecpieListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onClickList(event){
+
+    this.listToRecipes.emit(event)
   }
 
 }
